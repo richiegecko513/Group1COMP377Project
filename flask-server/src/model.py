@@ -34,4 +34,4 @@ print(f'Gradient Boosting Classifier Report: {classification_report(y_test, ypre
 accuracy = accuracy_score(y_test, ypred)
 print(f'Accuracy Score: {accuracy}')
 
-joblib.dump(model, "predictor.pkl")
+joblib.dump(model, "predictor.joblib")

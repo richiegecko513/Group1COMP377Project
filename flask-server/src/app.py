@@ -1,6 +1,6 @@
 import pandas as pd
-from config import config
-from config.auth import authenticate
+from src.config.config import CLIENT_ID, CLIENT_SECRET
+from src.config.auth import authenticate
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import joblib
@@ -9,9 +9,9 @@ import joblib
 app = Flask(__name__)
 cors = CORS(app)
 
-sp = authenticate(client_id=config.CLIENT_ID, client_secret=config.CLIENT_SECRET)
+sp = authenticate(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 
-model = joblib.load("predictor.pkl")
+model = joblib.load("src/predictor.joblib")
 
 
 def predict_moods(track_id):

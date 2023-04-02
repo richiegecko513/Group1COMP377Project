@@ -10,7 +10,7 @@ export default function Results() {
     const [songInfo, setSongInfo] = useState(null);
 
     useEffect(() => {
-        const apiUrl = `http://localhost:5000/predict?track_id=${trackId}`;
+        const apiUrl = `https://moodify-server.herokuapp.com/predict?track_id=${trackId}`;
         axios.post(apiUrl)
             .then((res) => {
                 setSongInfo(res.data);

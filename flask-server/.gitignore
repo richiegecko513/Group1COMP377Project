@@ -120,8 +120,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-flask-server/src/config/.env
-.env
 .venv
 env/
 venv/
